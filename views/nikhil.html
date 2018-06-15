@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="example" onkeyup="check(event)" autofocus>
+<button></button>
+<h1 id="texts"></h1>
+<script>
+    function check(event) {
+        document.getElementById('texts').innerHTML += event.key + '\t' + event.keyCode + '<br>';
+        if (event.keyCode>64 && event.keyCode<91)
+        {
+            document.getElementById('texts').innerHTML += event.key + '\t' + event.keyCode + '<br>';
+        }/*else {
+            document.getElementById('exa').value = '' ;
+        }*/
+    }
+</script>
+</body>
+</html>

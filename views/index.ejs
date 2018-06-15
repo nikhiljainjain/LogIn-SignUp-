@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="firstPage.js"></script>
+<noscript>Please either enable Scripting(JAVASCRIPT) or switch to other browser</noscript>
+<body style="background-color: gold">
+<div style="margin: 1% 15% 0.5% 25%;padding: 1% 15% 1% 5%">
+<form action="/login" method="POST">
+    Email <input type="email" name='emailId' placeholder="Em@il" required>
+    <br>
+    Password <input type="password" name='password' placeholder="P@ssw0rd" required>
+    <br>
+    <input type="submit" value="LogIn">
+    <br>
+</form>
+<br>
+<form action="/newUser" method="POST">
+    <label>Your name</label>
+    <input onkeyup="userNameCheck(event)" type="text" id="userName" name="userName" placeholder="Username" required>
+    <span id="alertUser"></span>
+    <br>
+    <label>Email</label>
+    <input name="emailId" type="email" placeholder="Em@il" required>
+    <br>
+    <label>Password</label>
+    <input onkeyup="passwordCheck()" type="password" id='firstPassword' minlength="8" name="password" placeholder="P@ssw0rd" required>
+    <span id="passwordCheck"></span>
+    <br>
+    <label>Confirm password</label>
+    <input onkeyup="passwordConfirmation()" type="password" minlength="8" id="secondPassword" placeholder="Confirm-Password" required>
+    <span id="passwordConfirmation"></span>
+    <br>
+    <input id='button' type="submit" value="Register">
+</form>
+</div>
+</body>
+</html>
