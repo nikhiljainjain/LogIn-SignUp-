@@ -1,5 +1,5 @@
 function userNameCheck(event) {
-    if ((event.keyCode>64 && event.keyCode<91)||(event.keyCode == 32))
+    if ((event.keyCode>64 && event.keyCode<91)||(event.keyCode == 32)||(event.keyCode == 8))
     {
         document.getElementById('alertUser').innerHTML = 'Username is allow' ;
     }else {
@@ -31,19 +31,19 @@ function passwordCheck(){
             document.getElementById('passwordCheck').innerHTML = "" ;
             break;
         case 1 :
-            document.getElementById('passwordCheck').innerHTML = "<strong>Weak Password</strong><br>" ;
+            document.getElementById('passwordCheck').innerHTML = "<strong>Weak Password</strong>" ;
             document.getElementById('passwordCheck').style.color = 'red' ;
             break;
         case 2 :
-            document.getElementById('passwordCheck').innerHTML = "<strong>Good Password</strong><br>" ;
+            document.getElementById('passwordCheck').innerHTML = "<i>Good Password</i>" ;
             document.getElementById('passwordCheck').style.color = 'darkorange' ;
             break;
         case 3 :
-            document.getElementById('passwordCheck').innerHTML = "<strong>Strong Password</strong><br>" ;
+            document.getElementById('passwordCheck').innerHTML = "<strong>Strong Password</strong>" ;
             document.getElementById('passwordCheck').style.color = 'green' ;
             break;
         case 4 :
-            document.getElementById('passwordCheck').innerHTML = "<strong>Very Strong Password</strong><br>" ;
+            document.getElementById('passwordCheck').innerHTML = "<b>Very Strong Password</b>" ;
             document.getElementById('passwordCheck').style.color = 'darkgreen' ;
             break;
     }
