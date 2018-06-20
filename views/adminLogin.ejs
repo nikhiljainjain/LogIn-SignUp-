@@ -1,0 +1,26 @@
+<% include partials/header %>
+<h1 style="align-self: center"> Hello <%= userName %> !!!</h1>
+<a href="/user/<%= token %>/logout"><button style="align: right">LogOut</button></a>
+<h3 style="align: right">your department is <%= department %></h3>
+<table style="align: center">
+    <% employees.forEach(function (employe){ %>
+    <tr>
+        <td> <%= employe.name %> </td>
+        <td> <%= employe.work %> </td>
+        <td> <%= employe.workStatus %> </td>
+        <td> <%= employe.email %> </td>
+        <td> <%= employe.deadLine %> </td>
+    </tr>
+    <% }) %>
+</table>
+<%= token  %>
+<script>
+    function writingCookies(){
+        var now = new Date();
+        now.setHours(now.getHours()+1);
+        document.cookie = 'jsontoken=' + '<%= token %>' +';';
+        document.cookie = 'expries=' + now.toUTCString() +';';
+    }
+    writingCookies();
+</script>
+<% include partials/footer %>

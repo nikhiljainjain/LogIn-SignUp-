@@ -1,0 +1,28 @@
+<% include partials/header %>
+<h1 style="align: center"> Hello <%= name %> !!!</h1>
+<a href="/user/<%= token %>/logout"><button style="align: right">LogOut</button></a>
+<% if (work.length == 0){ %>
+   <h1><%= 'No work for today'  %></h1>
+<% }else{ %>
+    <table>
+        <% work.forEach(function (works){ %>
+        <tr>
+            <td> <%= works.title %> </td>
+            <td> <%= works.givenBy %> </td>
+            <td> <%= works.status %> </td>
+            <td> <%= works.deadLine %> </td>
+        </tr>
+        <% }) %>
+    </table>
+<% } %>
+<%= token  %> <br>Token
+<script>
+    function writingCookies(){
+        var now = new Date();
+        now.setHours(now.getHours()+1);
+        document.cookie = 'jsontoken=' + '<%= token %>' +';';
+        document.cookie = 'expries=' + now.toUTCString() +';';
+    }
+    writingCookies();
+</script>
+<% include partials/footer %>
