@@ -1,6 +1,6 @@
 <% include partials/header %>
 <h1 style="align-self: center"> Hello <%= userName %> !!!</h1>
-<a href="/user/<%= token %>/logout"><button style="align: right">LogOut</button></a>
+<a href="/user/logout"><button onclick="deleteCookies()"  class="btn btn-warning btn-lg">LogOut</button></a>
 <h3 style="align: right">your department is <%= department %></h3>
 <table style="align: center">
     <% employees.forEach(function (employe){ %>
@@ -13,13 +13,19 @@
     </tr>
     <% }) %>
 </table>
-<%= token  %>
+<a href="/user/details"><button class="btn btn-primary">My details</button></a>
 <script>
+    function deleteCookies(){
+        var now = new Date();
+        now.setHours(now.getHours() -2);
+        document.cookie = 'jsontoken='+ '<%= token %>' + ';Expires=' + now.toUTCString() + ';' ;
+        now = undefined;
+    }
     function writingCookies(){
         var now = new Date();
         now.setHours(now.getHours()+1);
-        document.cookie = 'jsontoken=' + '<%= token %>' +';';
-        document.cookie = 'expries=' + now.toUTCString() +';';
+        document.cookie = 'jsontoken=' + '<%= token %>' +';Expires=' + now.toUTCString() + ';';
+        now = undefined;
     }
     writingCookies();
 </script>
