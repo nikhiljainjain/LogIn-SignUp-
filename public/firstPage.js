@@ -1,14 +1,17 @@
-function userNameCheck(event) {
-    if ((event.keyCode>64 && event.keyCode<91)||(event.keyCode == 32)||(event.keyCode == 8))
+function userNameCheck(event,id) {
+    if ((event.keyCode>64 && event.keyCode<91)||(event.keyCode == 32)||(event.keyCode == 8)||(event.keyCode == 16))
     {
         document.getElementById('alertUser').innerHTML = 'Username is allow' ;
     }else {
         document.getElementById('alertUser').innerHTML = 'You are allow only alphabet & space' ;
-        document.getElementById('userName').value = '';
+        document.getElementById(id).value = '';
     }
 }
-function passwordConfirmation(){
-    if (document.getElementById('firstPassword').value === document.getElementById('secondPassword').value){
+function smallCase(id){
+    document.getElementById(id).value = document.getElementById(id).value.toLowerCase();
+}
+function passwordConfirmation(confirmPassword, firstInput){
+    if (document.getElementById(firstInput).value === document.getElementById(confirmPassword).value){
         document.getElementById('button').disabled = false;
         document.getElementById('passwordConfirmation').innerHTML = '';
     }else {
@@ -16,8 +19,8 @@ function passwordConfirmation(){
         document.getElementById('passwordConfirmation').innerHTML = '<strong>Password not match</strong>';
     }
 }
-function passwordCheck(){
-    var password = document.getElementById('firstPassword').value,
+function passwordCheck(id){
+    var password = document.getElementById(id).value,
         passwordStrength = 0,
         caseList = ["[0-9]", "[A-Z]", "[a-z]", "[$@$!%*#?&]"];
     for (var i=0; i<4; i++){
