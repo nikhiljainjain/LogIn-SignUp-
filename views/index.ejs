@@ -1,36 +1,63 @@
-<!DOCTYPE html>
-<html>
+<% include partials/header.ejs %>
 <script src="firstPage.js"></script>
 <noscript>Please either enable Scripting(JAVASCRIPT) or switch to other browser</noscript>
-<body style="background-color: gold">
-<div style="margin: 1% 15% 0.5% 25%;padding: 1% 15% 1% 5%">
-<form action="/login" method="POST">
-    Email <input type="email" name='emailId' placeholder="Em@il" required>
-    <br>
-    Password <input type="password" name='password' placeholder="P@ssw0rd" required>
-    <br>
-    <input type="submit" value="LogIn">
-    <br>
-</form>
+<div class="container text-center">
+    <div style="align-items: right">
+        <div class="container">
+            <form method="post" action="/login" class="form-inline">
+                <div class="form-group mb-2">
+                    <label for="staticEmail2" class="sr-only">Email</label>
+                    <input type="email"  class="form-control-plaintext" id="staticEmail2"
+                           name='emailId' onkeyup="smallCase('staticEmail2')" placeholder="Em@il" required>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2" class="sr-only">Password</label>
+                    <input type="password" class="form-control-plaintext" id="inputPassword2"
+                           name='password' placeholder="P@ssw0rd" required>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary mb-2">LogIn</button>
+            </form>
+        </div>
+    </div>
 <br>
 <form action="/newUser" method="POST">
-    <label>Your name</label>
-    <input onkeyup="userNameCheck(event)" type="text" id="userName" name="userName" placeholder="Username" required>
+    <div class="form-group row">
+        <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Your Name</label>
+        <div class="col-sm-10">
+            <input class="form-control" id="formGroupExampleInput" onkeyup="userNameCheck(event,'formGroupExampleInput')"
+                   type="text" name="userName" placeholder="Username" required>
+        </div>
+    </div>
     <span id="alertUser"></span>
     <br>
-    <label>Email</label>
-    <input name="emailId" type="email" placeholder="Em@il" required>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input class="form-control" id="inputEmail3" name="emailId"
+                   type="email" placeholder="Em@il" onkeyup="smallCase('inputEmail3')" required>
+        </div>
+    </div>
     <br>
-    <label>Password</label>
-    <input onkeyup="passwordCheck()" type="password" id='firstPassword' minlength="8" name="password" placeholder="P@ssw0rd" required>
+    <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input class="form-control" id="inputPassword3" onkeyup="passwordCheck('inputPassword3')"
+                   type="password"  minlength="8" name="password" placeholder="P@ssw0rd" required>
+        </div>
+    </div>
     <span id="passwordCheck"></span>
     <br>
-    <label>Confirm password</label>
-    <input onkeyup="passwordConfirmation()" type="password" minlength="8" id="secondPassword" placeholder="Confirm-Password" required>
+    <div class="form-group row">
+        <label for="inputPassword4" class="col-sm-2 col-form-label">Confirm Password</label>
+        <div class="col-sm-10">
+        <input class="form-control" id="inputPassword4" onkeyup="passwordConfirmation('inputPassword4', 'inputPassword3')"
+               type="password" minlength="8" placeholder="Confirm-Password" required>
+        </div>
+    </div>
     <span id="passwordConfirmation"></span>
     <br>
-    <input id='button' type="submit" value="Register">
+    <input id='button' type="submit" value="SignUp" class="btn btn-primary btn-lg btn-block">
 </form>
+<br>
 </div>
-</body>
-</html>
+<% include partials/footer.ejs %>
