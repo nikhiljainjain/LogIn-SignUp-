@@ -6,6 +6,9 @@
   "engines":{
   	"node": "10.3.0"
   },
+  "scripts": {
+  "start": "node app.js"
+  },
   "dependencies": {
     "array-flatten": "^2.1.1",
     "audit": "^0.0.6",
