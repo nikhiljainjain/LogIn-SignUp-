@@ -1,0 +1,50 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Programme for login and sign up system for website created using mongodb for database handling and nodejs for backend processing.\r Before going to user this app please configure app for use by makes change in config.js and according to your comfort, makes \r sure you have install all node packages listed in app.js file.",
+  "main": "app.js",
+  "dependencies": {
+    "array-flatten": "^2.1.1",
+    "audit": "^0.0.6",
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "bulma-start": "^0.0.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "ejson": "^2.1.2",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "faker": "^4.1.0",
+    "finalhandler": "^1.1.1",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0",
+    "https": "^1.0.0",
+    "ico": "^0.3.3",
+    "jsonwebtoken": "^8.3.0",
+    "merge-descriptors": "^1.0.1",
+    "method-override": "^2.3.10",
+    "methods": "^1.1.2",
+    "mongodb": "^3.0.9",
+    "mongoose": "^5.1.6",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.6.7",
+    "path-to-regexp": "^2.2.1",
+    "url": "^0.11.0",
+    "webstorm": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhiljainjain/LogIn-SignUp-.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikhiljainjain/LogIn-SignUp-/issues"
+  },
+  "homepage": "https://github.com/nikhiljainjain/LogIn-SignUp-#readme"
+}
