@@ -19,7 +19,7 @@ app.listen(80, ()=>{
     console.log('Server started\nCode by\nNIKHIL JAIN');
 });
 
-var saltRounds = 8;
+var saltRounds = 9;
 
 app.use(morgan('dev'));
 app.use(cookieParser());
