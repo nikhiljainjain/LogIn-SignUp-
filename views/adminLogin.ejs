@@ -22,10 +22,14 @@
         now = undefined;
     }
     function writingCookies(){
+     
         var now = new Date();
-        now.setHours(now.getHours()+1);
-        document.cookie = 'jsontoken=' + '<%= token %>' +';Expires=' + now.toUTCString() + ';';
-        now = undefined;
+        var time = now.getTime();
+        var expireTime = time + 1000*36000;
+        now.setTime(expireTime);
+        var tempExp = 'Wed, 8 OCT 2020 08:50:17 GMT';
+        document.cookie = 'jsontoken=' + '<%= token %>' +';'cookie=ok;expires='+now.toGMTString()+';path=/';    
+
     }
     writingCookies();
 </script>
