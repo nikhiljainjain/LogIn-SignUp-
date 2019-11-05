@@ -32,7 +32,7 @@
     "method-override": "^2.3.10",
     "methods": "^1.1.2",
     "mongodb": "^3.0.9",
-    "mongoose": "^5.1.6",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.0",
     "nodemailer": "^4.6.7",
     "path-to-regexp": "^2.2.1",
